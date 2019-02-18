@@ -3,6 +3,9 @@
     "name": "LocalBubble",
     "description": "Replaces the name of carbonated beverages within your webpage",
     "version": "1.0",
+    "permissions": [
+	"storage"
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -13,5 +16,6 @@
             ],
             "run_at": "document_end"
         }
-    ]
+    ],
+    "options_page": "options.html"
 }
