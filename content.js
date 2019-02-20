@@ -1,8 +1,17 @@
 var elements = document.getElementsByTagName('*'); // Get all elements
 
-var wordsToReplace = ['coke', 'soda', 'lolly water', 'lolly-water', 'pop', 'soda pop', 'soda-pop',
-                      'Coke', 'Soda', 'Lolly Water', 'Lolly-Water', 'Pop', 'Soda Pop', 'Soda-Pop']
+var wordsToReplace = ['coke', 'soda', 'lolly water', 'lolly-water', 'pop', 'soda pop', 'soda-pop']
 var replaceWord = 'Replacement'
+
+function upcaseInclude(lowcaselist) {
+  upcaselist = lowcaselist;
+  for (item in upcaselist) {
+    lowcaselist.push(upcaselist[item][0].toUpperCase()+upcaselist[item].slice(1));
+  }
+  return lowcaselist;
+}
+
+wordsToReplace = upcaseInclude(wordsToReplace);
 
 for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
